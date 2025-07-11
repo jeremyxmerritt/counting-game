@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Counting Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Count the Blocks!</h1>
+            <div class="score-display">
+                <span>Round: <span id="current-round">1</span> / 10</span>
+            </div>
+        </div>
+        
+        <div class="character-area">
+            <div id="number-character" class="number-character"></div>
+        </div>
+        
+        <div class="choices-area">
+            <div class="choice-button" id="choice-1">
+                <span class="balloon-number"></span>
+            </div>
+            <div class="choice-button" id="choice-2">
+                <span class="balloon-number"></span>
+            </div>
+            <div class="choice-button" id="choice-3">
+                <span class="balloon-number"></span>
+            </div>
+        </div>
+        
+        <div class="confetti-container" id="confetti-container"></div>
+        
+        <div class="game-over-screen" id="game-over-screen" style="display: none;">
+            <h2>Great Job!</h2>
+            <p>You completed all 10 rounds!</p>
+            <button id="play-again-btn" class="play-again-btn">Play Again</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
