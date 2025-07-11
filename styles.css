@@ -320,6 +320,18 @@ body {
     animation: number-overlay-fade 1s ease-out forwards;
 }
 
+.count-display {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+    z-index: 1000;
+    pointer-events: none;
+    animation: count-fade 1s ease-out forwards;
+}
+
 @keyframes number-overlay-fade {
     0% {
         opacity: 0;
@@ -328,6 +340,21 @@ body {
     30% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes count-fade {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
     }
     100% {
         opacity: 0;

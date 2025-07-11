@@ -189,6 +189,13 @@ class NumberGame {
         // Add bright class if not already there
         if (!block.classList.contains('bright')) {
             block.classList.add('bright');
+            
+            // Count how many blocks are now lit up
+            const brightBlocks = character.querySelectorAll('.block.bright');
+            const count = brightBlocks.length;
+            
+            // Show the count number
+            this.showCountNumber(count, block);
         }
         
         // Check if all blocks in the character are bright
@@ -201,6 +208,27 @@ class NumberGame {
                 allBlocks.forEach(b => b.classList.remove('bright'));
             }, 500);
         }
+    }
+    
+    showCountNumber(count, block) {
+        // Create count display element
+        const countDisplay = document.createElement('div');
+        countDisplay.className = 'count-display';
+        countDisplay.textContent = count;
+        
+        // Position it directly above the character blocks
+        const character = document.querySelector('.number-character');
+        const characterRect = character.getBoundingClientRect();
+        
+        countDisplay.style.left = '50%';
+        countDisplay.style.top = (characterRect.top - 80) + 'px';
+        
+        document.body.appendChild(countDisplay);
+        
+        // Remove after animation
+        setTimeout(() => {
+            countDisplay.remove();
+        }, 1000);
     }
     
     showNumberOverlay(number) {
